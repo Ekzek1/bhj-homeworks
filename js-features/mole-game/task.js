@@ -5,6 +5,11 @@ function getHole(index) {
 	return document.getElementById(`hole${index}`);
 }
 
+function gameOver(mess){
+    alert(mess);
+    countDead.textContent = 0
+    counLos.textContent = 0
+}
 for (let i = 1; i < 9; i++) {
     let hole = getHole(i)
 
@@ -16,10 +21,10 @@ for (let i = 1; i < 9; i++) {
         }
             
         if(countDead.textContent == 10){
-            alert('Вы победили!')
+            gameOver('Вы победили!')
         }
         if(counLos.textContent == 5){
-            alert('Вы проиграли!')
+            gameOver('Вы проиграли!');
         }
     }
 }
