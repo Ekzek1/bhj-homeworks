@@ -10,15 +10,9 @@ for (let i = 0; i < menuLinks.length; i++) {
 
 	menuLink.onclick = function() {
 		if(subMenu) {
-			subMenu.classList.add('menu_active');
+			subMenu.classList.toggle('menu_active');
             return false;
 		}
         
 	}
-    // let closeMenu = document.getElementsByClassName('menu_active');
-    // closeMenu.onclick = fucntion(){
-    //     if (closeMenu.matches('menu_active')){
-    //         subMenu.classList.remove('menu_active');
-    //     }
-    // }
 }
