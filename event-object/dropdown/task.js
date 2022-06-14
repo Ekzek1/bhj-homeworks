@@ -18,3 +18,14 @@ function changeValueText (e){
 dropdownItem.forEach(item =>{
     item.addEventListener('click',changeValueText)
 })
+
+
+// const dropdownValues = document.querySelectorAll('.dropdown__value');
+
+// dropdownValues.forEach((item) =>{
+//     item.addEventListener('click', (event) =>{
+//         const parent = event.target.closest('.dropdown');
+//         const list = parent.querySelector('.dropdown__list');
+//         list.classList.toggle('dropdown__list_active');
+//     })
+// })

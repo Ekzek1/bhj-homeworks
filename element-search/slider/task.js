@@ -1,25 +1,36 @@
 const sliderItem = document.querySelectorAll('.slider__item');
 const sliderArray = Array.from(sliderItem)
-const sliderDots = document.querySelectorAll('.slider__dot');
+const sliderDots = Array.from(document.querySelectorAll('.slider__dot'));
 
+let activeSlide = sliderArray.findIndex(item => item.classList.contains('slider__item_active'));
 
-let activeSlide = sliderArray.findIndex(item => item.classList.contains('slider__item_active'))
-// console.log(activeSlide)
+//Slider
 function showSlide (n){
     sliderArray[activeSlide].classList.remove('slider__item_active');
+    sliderDots[activeSlide].classList.remove('slider__dot_active')
     sliderArray[n].classList.add('slider__item_active');
-    activeSlide = n 
+    sliderDots[n].classList.add('slider__dot_active');
+    activeSlide = n;
 }
-//повесил событие на dot, еще не смог разобраться как определить по какому элементу был сделан click
+
 document.querySelector('.slider__arrow_next').addEventListener('click', function(){
-    let count = activeSlide + 1
+    let count = activeSlide + 1;
     count = count >= sliderItem.length ? 0 : count;
-    console.log(count)
     showSlide(count)
 })
 document.querySelector('.slider__arrow_prev').addEventListener('click', function(){
-    let count = activeSlide - 1
-    count = count < 0 ? sliderItem.length - 1 : count
-    console.log(count)
+    let count = activeSlide - 1;
+    count = count < 0 ? sliderItem.length - 1 : count;
     showSlide(count)
 })
+
+// dots
+function DotsActive(event){
+    let itemIndex = event.target;
+    itemIndex = sliderDots.findIndex(item => item === itemIndex);
+    showSlide(itemIndex)
+}
+
+sliderDots.forEach(item => {
+    item.addEventListener('click',DotsActive )
+});
