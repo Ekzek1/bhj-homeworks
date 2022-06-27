@@ -43,6 +43,7 @@ function randomMessages(){
     `;
 }
 
+
 function deliveryMessage(e){
     let message = chatInput.value
     if(e.key === 'Enter'){
