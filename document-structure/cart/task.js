@@ -9,14 +9,15 @@ products.addEventListener('click', function(e){
     let quantityInc = productActive.querySelector('.product__quantity-control_inc');
 
     if(e.target === quantityDec){
-        if(productValue.textContent == -1){
-            productValue = productValue.textContent
+        if(productValue.textContent == 0){
+            return alert('значение не может быть меньше 1');
         }
         productValue.textContent -= 1;
     }
     if(e.target === quantityInc){
             productValue.textContent++
     }
+    
 //добавление товара в корзину
     let productImg = productActive.querySelector('.product__image');
     productImg = productImg.getAttribute('src');
@@ -25,9 +26,9 @@ products.addEventListener('click', function(e){
     let cartProduct = Array.from(document.querySelectorAll('.cart__product'));
     let cartProductIdCount = cartProduct.find(item => item.dataset.id === productId);
 
-    if(cartProductIdCount){
+    if(cartProductIdCount && e.target === productAdd){
         cartProductIdCount = cartProductIdCount.querySelector('.cart__product-count');
-        cartProductIdCount.textContent = productValue.textContent
+        cartProductIdCount.textContent = +cartProductIdCount.textContent + +productValue.textContent
     }else if(e.target === productAdd){
             cartProducts.insertAdjacentHTML('afterBegin',` <div class="cart__product" data-id="${productId}">
             <img class="cart__product-image" src="${productImg}">

@@ -7,6 +7,9 @@ function appearancetToltip(e){
     let atributesTooltip = clickTooltip.getAttribute('title');
     tooltip.classList.add('tooltip_active');
     tooltip.textContent = atributesTooltip 
+    if(clickTooltip.lastElementChild === tooltip){
+        tooltip.classList.remove('tooltip_active');
+    }
     clickTooltip.appendChild(tooltip)
 }
 
