@@ -5,11 +5,15 @@ function appearancetToltip(e){
     e.preventDefault();
     let clickTooltip = e.target;
     let atributesTooltip = clickTooltip.getAttribute('title');
-    tooltip.classList.add('tooltip_active');
-    tooltip.textContent = atributesTooltip 
-    if(clickTooltip.lastElementChild === tooltip){
-        tooltip.classList.remove('tooltip_active');
+
+    if(tooltip.textContent ===  atributesTooltip ){
+        tooltip.classList.toggle('tooltip_active');
+        return
+    }else{
+        tooltip.classList.add('tooltip_active');
     }
+
+    tooltip.textContent = atributesTooltip
     clickTooltip.appendChild(tooltip)
 }
 

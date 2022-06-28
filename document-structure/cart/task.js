@@ -8,10 +8,7 @@ products.addEventListener('click', function(e){
     let quantityDec = productActive.querySelector('.product__quantity-control_dec');
     let quantityInc = productActive.querySelector('.product__quantity-control_inc');
 
-    if(e.target === quantityDec){
-        if(productValue.textContent == 0){
-            return alert('значение не может быть меньше 1');
-        }
+    if(e.target === quantityDec && productValue.textContent > 1){
         productValue.textContent -= 1;
     }
     if(e.target === quantityInc){
@@ -36,3 +33,4 @@ products.addEventListener('click', function(e){
         </div>`)
     }
 })
+// большое вам спасибо, что так тщательно проверяете, знаю что еще много ошибаюсь, но буду страться)
