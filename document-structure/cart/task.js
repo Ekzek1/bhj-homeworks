@@ -33,4 +33,8 @@ products.addEventListener('click', function(e){
         </div>`)
     }
 })
+
+function (e){
+    let coin
+}
 // большое вам спасибо, что так тщательно проверяете, знаю что еще много ошибаюсь, но буду страться)
