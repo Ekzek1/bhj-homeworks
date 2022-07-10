@@ -45,6 +45,8 @@ form.addEventListener('submit', (e) =>{
 
         if(responseAuth){
             localStorage.userId = responseId;
+            form.elements.login.value = '';
+            form.elements.password.value = '';
             return setWelcome(responseId)
         }
     }
