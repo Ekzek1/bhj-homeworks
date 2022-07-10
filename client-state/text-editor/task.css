@@ -8,3 +8,17 @@ textarea {
   border: 1px solid #e2e2e2;
   box-sizing: border-box;
 }
+
+.clear{
+    background-color: red;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    border: 0;
+    transition: all 0.1s ease;
+}
+
+.clear:hover{
+    background-color: rgba(255, 0, 0, 0.514);
+}

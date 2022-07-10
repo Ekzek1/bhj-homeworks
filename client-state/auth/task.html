@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -29,6 +29,9 @@
                     <div class="row">
                         <input type="password" name="password" class="control" placeholder="Пароль">
                     </div>
+                    <div class="fail" >
+                        Неверный логин/пароль
+                    </div>
                     <div class="row">
                         <button class="btn" id="signin__btn">Войти</button>
                     </div>
@@ -36,6 +39,7 @@
             </div>
             <div class="welcome" id="welcome">
                 Добро пожаловать, пользователь #<span id="user_id"></span>
+                <button class="deauthorization">Выход</button>
             </div>
         </div>
         </main>    
